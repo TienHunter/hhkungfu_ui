@@ -1,0 +1,8 @@
+// init project
+   - cài đặt customize-cra
+   - Cài đặt babel-plugin-module-resolver
+   - cài đặt và cấu hinh prettier
+   npm i sass --dev
+   npm install normalize.css
+   font-family
+   npm i react-router-dom
