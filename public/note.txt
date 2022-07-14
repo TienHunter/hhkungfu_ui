@@ -6,3 +6,12 @@
    npm install normalize.css
    font-family
    npm i react-router-dom
+
+không nhớ ngày làm đc phần <Header /> -> ô search tựa tựa tiktok-ui
+                                       -> cũng dùng tippy, nhưng chưa làm hiển thị kết quả tìm kiếm
+               làm thành navbar khi kéo xuống sẽ ẩn header, giữ thành nav-bar, khi kéo lên trở lại như cũ
+               sử dụng 
+                       position: -webkit-sticky;
+                        position: sticky;
+...
+14/7 làm animation, grid cho các item để hiển thị ở <Home/>

@@ -1,0 +1,24 @@
+.nar-container {
+    .btn-nav {
+        color: #d0d0d0;
+        font-size: 1.4rem;
+        font-weight: 500;
+        transition: all 0.5s ease;
+        padding: 14px 10px;
+        background-color: transparent;
+        &:hover {
+            color: #fff;
+            background: rgba(0, 0, 0, 0.2);
+            animation: flicker 1s ease-in-out infinite alternate;
+        }
+    }
+}
+@keyframes flicker {
+    0% {
+        text-shadow: 0 0 5px #00dcff, 0 0 10px #00dcff, 0 0 15px #00dcff, 0 0 30px #00dcff;
+    }
+
+    100% {
+        text-shadow: 0 0 5px #09889c, 0 0 10px #09889c, 0 0 15px #09889c, 0 0 30px #09889c;
+    }
+}

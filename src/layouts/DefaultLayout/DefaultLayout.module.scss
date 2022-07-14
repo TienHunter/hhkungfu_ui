@@ -1,0 +1,33 @@
+.wrapper {
+    background-color: #23232a;
+
+    .container-default-layout {
+        // margin-top: var(--default-layout-header-height);
+        padding-top: 60px;
+        height: 500px;
+        // .content {
+        // }
+    }
+}
+.nav-bar {
+    z-index: 999;
+    overflow: hidden;
+    width: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(114, 214, 245, 0.1),
+        rgba(200, 193, 221, 0.1) 50%,
+        rgba(255, 148, 179, 0.1)
+    );
+    transition: background linear 1s;
+    &.sticky {
+        background: linear-gradient(90deg, #000, #333 50%, #555);
+        // position: fixed;
+        // top: 0;
+        // // transition: all linear 0.3s;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        // background-color: yellow;
+    }
+}

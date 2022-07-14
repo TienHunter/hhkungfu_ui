@@ -9,10 +9,11 @@ function App() {
         <Routes>
           {publicRoutes.map((route, index) => {
             const Layout = route.layout || DefaultLayout;
-            const Page = route.component
+            const Page = route.component;
+            // console.log("check key : ", index);
             return (
               <Route
-                index={index}
+                key={index}
                 path={route.path}
                 element={
                   <Layout>
