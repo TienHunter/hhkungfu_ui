@@ -19,13 +19,16 @@
 }
 
 .book-mark {
-    margin-right: 30px;
+    // margin-right: 30px;
     background: linear-gradient(to right, rgba(6, 52, 88, 0.5), rgba(28, 94, 148, 0.5));
     padding: 8px 15px;
     border-radius: 20px;
+    font-size: 1.4rem;
+    line-height: 2rem;
     color: #fff;
     cursor: pointer;
     display: flex;
+    align-items: center;
     transition: background linear 0.3s;
     &:hover {
         background: linear-gradient(to right, #063458, #1c5e94);

@@ -1,0 +1,95 @@
+.heading {
+    position: relative;
+    margin: 12px 0;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        border-bottom: 1px solid #333 !important;
+    }
+    .h-text {
+        position: relative;
+        display: inline-block;
+        padding: 9px 0;
+        color: transparent;
+        background: linear-gradient(to right, #ff8a00, #ff2070);
+
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        box-decoration-break: clone;
+        &::before {
+            position: absolute;
+            content: '';
+            bottom: 0;
+            width: 100%;
+            background: linear-gradient(to right, #ff8a00, #ff2070);
+            padding: 0.5px;
+        }
+    }
+}
+.item {
+    position: relative;
+    display: flex;
+    margin: 2px 0;
+    padding-right: 10px;
+    border-radius: 4px;
+    overflow: hidden;
+
+    background: rgb(11, 15, 21);
+    background-size: 200% 100%;
+    background-image: linear-gradient(to right, #1e1e24 0%, #0c0c0e 51%, #060808 50%);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    &:hover {
+        background-position: right center;
+        img {
+            transform: scale(1.2);
+        }
+        .title {
+            font-weight: 600;
+            background: -webkit-linear-gradient(45deg, #ff8a00, #ff2070 80%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            box-decoration-break: clone;
+        }
+    }
+    .image {
+        overflow: hidden;
+        margin-right: 15px;
+        // float: left;
+        flex-shrink: 0;
+        img {
+            width: 75px;
+            height: 105px;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+    .title {
+        color: #d8d8d8;
+        margin: 10px 0 5px;
+
+        font-size: 1.3rem;
+        height: 4rem;
+        line-height: 2rem;
+        // flex: 1;
+        // text-transform: capitalize;
+        // -webkit-box-orient: vertical;
+        // display: -webkit-box;
+        // // white-space: nowrap;
+        // -webkit-line-clamp: 2;
+        // overflow: hidden;
+        // // -webkit-box-flex: 1;
+        // text-overflow: ellipsis;
+        // display: block;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+    }
+}

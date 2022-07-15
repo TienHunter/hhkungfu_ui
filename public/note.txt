@@ -15,3 +15,29 @@ không nhớ ngày làm đc phần <Header /> -> ô search tựa tựa tiktok-ui
                         position: sticky;
 ...
 14/7 làm animation, grid cho các item để hiển thị ở <Home/>
+15/7 làm animation để khi hover vào <Sidebar /> có hiệu ứng
+          .title {
+            color: #d8d8d8;
+            margin: 10px 0 5px;
+
+            font-size: 13px;
+            line-height: 20px;
+            flex: 1;
+            text-transform: capitalize;
+
+            // chữ hiện không quá hai dòng
+            display: -webkit-box; // cần tìm hiểu
+            overflow: hidden;
+            -webkit-line-clamp: 2;
+            -webkit-box-flex: 1;
+            -webkit-box-orient: vertical;
+         }
+         khi hover {
+                  .title {
+                     font-weight: 600;
+                     background: -webkit-linear-gradient(45deg, #ff8a00, #ff2070 80%);
+                     background-clip: text;
+                     -webkit-text-fill-color: transparent;
+                     box-decoration-break: clone;
+                  }
+         }

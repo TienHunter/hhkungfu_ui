@@ -1,5 +1,5 @@
 function ViewFilm() {
-   return (<h1>View Page</h1>);
+   return (<h1 style={{ color: "yellow" }}>View Page</h1>);
 }
 
 export default ViewFilm;

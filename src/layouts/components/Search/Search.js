@@ -21,30 +21,32 @@ function Search() {
    };
    return (
 
-      <HeadlessTippy
-         interactive={true}
-         visible={showResult && searchResult.length > 0} // customize show, hide tippy
-         placement="bottom"
-         render={(attrs) => (
-            <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-               Search result...
-            </div>
-         )}
-         onClickOutside={handleHideResult}
-      >
+      <div>
+         <HeadlessTippy
+            interactive={true}
+            visible={showResult && searchResult.length > 0} // customize show, hide tippy
+            placement="bottom"
+            render={(attrs) => (
+               <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+                  Search result...
+               </div>
+            )}
+            onClickOutside={handleHideResult}
+         >
 
-         <div className={cx("search")}>
-            <input
-               value={searchValue}
-               onChange={(e) => setSearchValue(e.target.value)}
-               placeholder="Enter name animation"
-               onFocus={() => setShowResult(true)}
-            />
-            <button className={cx("search-btn")}>
-               <FontAwesomeIcon icon={faMagnifyingGlass} />
-            </button>
-         </div>
-      </HeadlessTippy>
+            <div className={cx("search")}>
+               <input
+                  value={searchValue}
+                  onChange={(e) => setSearchValue(e.target.value)}
+                  placeholder="Enter name animation"
+                  onFocus={() => setShowResult(true)}
+               />
+               <button className={cx("search-btn")}>
+                  <FontAwesomeIcon icon={faMagnifyingGlass} />
+               </button>
+            </div>
+         </HeadlessTippy>
+      </div>
    );
 }
 

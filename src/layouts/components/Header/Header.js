@@ -19,7 +19,7 @@ function Header() {
             </Link>
             <Search />
 
-            <div className={cx("book-mark")}>
+            <div className={cx("book-mark", "col-md-0")}>
                <span className={cx("icon")}><FontAwesomeIcon icon={faBookmark} /></span>
                <span className={cx("title")}>Phim yêu thích</span>
                <span className={cx("count")}>1</span>

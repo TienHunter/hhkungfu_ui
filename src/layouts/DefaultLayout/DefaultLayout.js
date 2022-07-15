@@ -28,7 +28,7 @@ function DefaultLayout({ children }) {
       };
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [window.pageYOffset]);
-   console.log("check nav-bar", scrollNav);
+   // console.log("check nav-bar", scrollNav);
    return (
       <div
          className={cx("wrapper")}
@@ -41,10 +41,10 @@ function DefaultLayout({ children }) {
             <div className={cx("container")}>
                <div className={cx("grid")}>
                   <div className={cx("row")}>
-                     <div className={cx("col-8", "content")}>
+                     <div className={cx("col-md-8", "col-sm-12", "content")}>
                         {children}
                      </div>
-                     <div className={cx("col-4")} >
+                     <div className={cx("col-md-4", "col-sm-12")} >
                         <Sidebar />
                      </div>
                   </div>
