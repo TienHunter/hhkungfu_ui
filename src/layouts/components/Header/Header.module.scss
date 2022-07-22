@@ -8,7 +8,6 @@
     .content {
         display: flex;
         align-items: center;
-        justify-content: space-between;
         margin: auto;
         .logo {
             width: 240px;
@@ -21,14 +20,16 @@
 .book-mark {
     // margin-right: 30px;
     background: linear-gradient(to right, rgba(6, 52, 88, 0.5), rgba(28, 94, 148, 0.5));
+    color: #fff;
+    display: flex;
+    align-items: center;
+    min-width: 180px;
     padding: 8px 15px;
     border-radius: 20px;
     font-size: 1.4rem;
     line-height: 2rem;
-    color: #fff;
+
     cursor: pointer;
-    display: flex;
-    align-items: center;
     transition: background linear 0.3s;
     &:hover {
         background: linear-gradient(to right, #063458, #1c5e94);
@@ -45,5 +46,19 @@
         text-align: center;
         border-radius: 50%;
         background: #3f86ed;
+    }
+}
+@media screen and (min-width: 768px) {
+    .content {
+        justify-content: space-between;
+    }
+}
+@media screen and (max-width: 767px) {
+    .content {
+        justify-content: center;
+    }
+    .search,
+    .book-mark {
+        display: none;
     }
 }

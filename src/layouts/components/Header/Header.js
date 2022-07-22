@@ -17,7 +17,7 @@ function Header() {
             <Link to="/">
                <img src={images.logo} alt="lo-go" className={cx("logo")} />
             </Link>
-            <Search />
+            <div className={cx("search")}><Search /></div>
 
             <div className={cx("book-mark", "col-md-0")}>
                <span className={cx("icon")}><FontAwesomeIcon icon={faBookmark} /></span>

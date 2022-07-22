@@ -1,6 +1,6 @@
 .wrapper {
     background-color: #23232a;
-
+    transition: all 0.5s;
     .container-default-layout {
         // margin-top: var(--default-layout-header-height);
         // padding-top: 60px;
@@ -29,5 +29,21 @@
         position: sticky;
         top: 0;
         // background-color: yellow;
+    }
+}
+.onTop {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background-color: #888;
+    color: #fff;
+    font-size: 2.4rem;
+    opacity: 1;
+    transition: all 0.5s;
+    &:hover {
+        opacity: 0.8;
     }
 }
