@@ -1,6 +1,5 @@
 
-import { Link } from "react-router-dom"
-
+import { Link, useNavigate } from "react-router-dom"
 import classNames from "classnames/bind";
 import styles from "./Home.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,7 +12,6 @@ const animations = [
       tilte: "Quân Hữu Vân",
       link: "quan-huu-van",
       image: "https://i0.wp.com/hhhkungfu.tv/wp-content/uploads/Quan-Huu-Van.jpg?fit=320%2C449&ssl=1",
-      description: "string text",
       children: [
          {
             episode: 1,
@@ -22,14 +20,14 @@ const animations = [
       ]
    },
    {
-      tilte: "Quân Hữu Vân",
-      link: "link",
-      image: "https://i0.wp.com/hhhkungfu.tv/wp-content/uploads/Quan-Huu-Van.jpg?fit=320%2C449&ssl=1"
+      tilte: "Đấu la đại lục",
+      link: "dau-la-dai-luc",
+      image: "https://i0.wp.com/hhhkungfu.tv/wp-content/uploads/2022/01/Dau-La-Dai-Luc.jpg?fit=320%2C449&ssl=1",
    },
    {
-      tilte: "Quân Hữu Vân",
-      link: "link",
-      image: "https://i0.wp.com/hhhkungfu.tv/wp-content/uploads/Quan-Huu-Van.jpg?fit=320%2C449&ssl=1"
+      tilte: "Đấu phá thương khung",
+      link: "dau-pha-thuong-khung",
+      image: "https://i0.wp.com/hhhkungfu.tv/wp-content/uploads/2022/01/Dau-Pha-Thuong-Khung-OVA-3.jpg?fit=320%2C449&ssl=1",
    },
    {
       tilte: "Quân Hữu Vân",
@@ -94,8 +92,13 @@ const animations = [
 
 ]
 function HomePage() {
+   const navigate = useNavigate();
+   const onDesFilm = (data) => {
+      console.log("check linkURL: ", data);
+      // e.target.reset();
+      navigate(data);
+   }
    return (
-
       <div className={cx("wrapper")}>
          <div className={cx("grid")}>
             <div className={cx("row")}>
@@ -107,8 +110,13 @@ function HomePage() {
                   </h4>
                </div>
                {animations.map((animation, index) => {
+                  let linkURL = animation.link;
                   return (
-                     <div className={cx("col-3", "col-md-3", "col-sm-4", "col-6", "wrapper", "grid-item")} key={index}>
+                     <div
+                        className={cx("col-3", "col-md-3", "col-sm-4", "col-6", "wrapper", "grid-item")}
+                        key={index}
+                        onClick={() => onDesFilm(linkURL)}
+                     >
                         <Link className={cx("item")} to={animation.link}>
                            <img className={cx("image")} src={animation.image} alt="avatar" />
                            {animation.children ? <span className={cx("episode")}>{`Tập ${animation.children[animation.children.length - 1].episode}`}</span> : ''}

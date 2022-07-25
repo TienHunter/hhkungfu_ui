@@ -1,18 +1,30 @@
-.nar-container {
-    .btn-nav {
-        color: #d0d0d0;
-        font-size: 1.4rem;
-        font-weight: 500;
-        transition: all 0.5s ease;
-        padding: 14px 10px;
-        background-color: transparent;
-        &:hover {
-            color: #fff;
-            background: rgba(0, 0, 0, 0.2);
-            animation: flicker 1s ease-in-out infinite alternate;
-        }
+.list-btn {
+    position: relative;
+    display: flex;
+    // align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.menu-bars {
+    display: none;
+}
+.btn-nav {
+    display: block;
+    width: 100%;
+    color: #d0d0d0;
+    font-size: 1.4rem;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    padding: 14px 10px;
+    background-color: transparent;
+    &:hover {
+        color: #fff;
+        background: rgba(0, 0, 0, 0.2);
+        animation: flicker 1s ease-in-out infinite alternate;
     }
 }
+
 @keyframes flicker {
     0% {
         text-shadow: 0 0 5px #00dcff, 0 0 10px #00dcff, 0 0 15px #00dcff, 0 0 30px #00dcff;
@@ -20,5 +32,36 @@
 
     100% {
         text-shadow: 0 0 5px #09889c, 0 0 10px #09889c, 0 0 15px #09889c, 0 0 30px #09889c;
+    }
+}
+@media screen and (max-width: 767px) {
+    .list-btn {
+        display: block;
+        height: 48px;
+        overflow: hidden;
+        // animation: smooth-bars 1s linear infinite;
+        // @keyframes smooth-bars {
+        //     to {
+        //         height: 300px;
+        //     }
+        // }
+        transition: all 0.5s linear;
+        .menu-bars {
+            display: block;
+            font-size: 2.4rem;
+            color: #fff;
+            padding: 6px;
+            // border-bottom: 1px solid #888;
+            cursor: pointer;
+            opacity: 1;
+            transition: all 0.3s;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+        .btn-nav {
+            text-align: left;
+            font-size: 2rem;
+        }
     }
 }

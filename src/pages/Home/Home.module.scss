@@ -104,15 +104,18 @@
             position: absolute;
             left: 0;
             bottom: 0;
+            width: 100%;
             padding: 8px 10px 4px;
             font-size: 1.2rem;
             // font-weight: 600;
             color: #fff;
 
-            display: -webkit-box;
+            white-space: nowrap;
             -webkit-line-clamp: 1;
-            -webkit-box-flex: 1;
-            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+
             margin-bottom: 3px;
         }
     }
