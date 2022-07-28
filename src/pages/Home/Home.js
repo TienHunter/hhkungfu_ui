@@ -1,5 +1,5 @@
 
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import classNames from "classnames/bind";
 import styles from "./Home.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -92,12 +92,11 @@ const animations = [
 
 ]
 function HomePage() {
-   const navigate = useNavigate();
-   const onDesFilm = (data) => {
-      console.log("check linkURL: ", data);
-      // e.target.reset();
-      navigate(data);
-   }
+   // const navigate = useNavigate();
+   // const onDesFilm = (data) => {
+   //    console.log("check linkURL: ", data);
+   //    navigate(data);
+   // }
    return (
       <div className={cx("wrapper")}>
          <div className={cx("grid")}>
@@ -110,12 +109,12 @@ function HomePage() {
                   </h4>
                </div>
                {animations.map((animation, index) => {
-                  let linkURL = animation.link;
+                  // let linkURL = animation.link;
                   return (
                      <div
-                        className={cx("col-3", "col-md-3", "col-sm-4", "col-6", "wrapper", "grid-item")}
+                        className={cx("col-lg-3", "col-md-4", "col-sm-4", "col-6", "wrapper", "grid-item")}
                         key={index}
-                        onClick={() => onDesFilm(linkURL)}
+                     // onClick={() => onDesFilm(linkURL)}
                      >
                         <Link className={cx("item")} to={animation.link}>
                            <img className={cx("image")} src={animation.image} alt="avatar" />

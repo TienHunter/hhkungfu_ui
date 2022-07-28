@@ -7,7 +7,7 @@ import Sidebar from "../components/Sidebar";
 import styles from "./DefaultLayout.module.scss";
 import Navbar from "../components/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUpLong } from "@fortawesome/free-solid-svg-icons";
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 const cx = classNames.bind(styles);
 function DefaultLayout({ children }) {
    const [scrollNav, setScrollNav] = useState(false);
@@ -61,7 +61,7 @@ function DefaultLayout({ children }) {
          </div>
          {scrollOnTop &&
             <button className={cx("onTop")} onClick={handleScrollOnTop}>
-               <FontAwesomeIcon icon={faUpLong} />
+               <FontAwesomeIcon icon={faArrowUp} />
             </button>
          }
       </>
