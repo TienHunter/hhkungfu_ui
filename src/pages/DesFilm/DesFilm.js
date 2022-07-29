@@ -3,6 +3,8 @@ import { useLocation, Link } from 'react-router-dom';
 import classNames from "classnames/bind";
 import styles from "./DesFilm.module.scss"
 import { desFilms } from "~/services";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHardDrive } from "@fortawesome/free-solid-svg-icons";
 const cx = classNames.bind(styles);
 
 function DesFilm() {
@@ -24,7 +26,8 @@ function DesFilm() {
    // console.log("check data: ", location.pathname);
    return (
       <div className={cx("wrapper")}>
-         <div className={cx("grid")}>
+         <div className={cx("container")}>
+
             <h4 className={cx("heading")}>
                <span className={cx("h-text")}>Thông tin phim</span>
             </h4>
@@ -53,6 +56,38 @@ function DesFilm() {
                   </p>
                </div>
 
+            </div>
+            <div className={cx("list-episode")}>
+               <div className={cx("le-header")}>
+                  <span className={cx("le-title")}>
+                     <FontAwesomeIcon icon={faHardDrive} />
+                     <span className={cx("le-text")}>FULL HD</span>
+                  </span>
+               </div>
+               <ul className={cx("row", "le-content")}>
+                  {data && data.episodes ?
+                     data.episodes.map((item, index) => {
+
+                        return (
+                           <li key={index} className={cx("episode", "col-3", "col-sm-2", "col-xl-1")}>
+                              <span className={cx("text")}>{item}</span>
+                           </li>
+                        )
+                     }) :
+                     <></>
+                  }
+               </ul>
+
+            </div>
+         </div>
+         <div className={cx("des-film")}>
+            <div className={cx("container")}>
+               <h4 className={cx("heading")}>
+                  <span className={cx("h-text")}>Thông tin phim</span>
+               </h4>
+               <div className={cx("des-content")}>
+                  {data && data.des}
+               </div>
             </div>
          </div>
       </div>
