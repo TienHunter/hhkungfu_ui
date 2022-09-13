@@ -96,8 +96,8 @@ function HomePage() {
    const [films, setFilms] = useState([])
    useEffect(() => {
       fetch('http://localhost:8080/api/films')
-  .then((response) => response.json())
-  .then((data) =>setFilms(data));
+         .then((response) => response.json())
+         .then((data) =>setFilms(data));
    },[])
    return (
       <div className={cx("wrapper")}>
@@ -118,7 +118,7 @@ function HomePage() {
                         key={index}
                      // onClick={() => onDesFilm(linkURL)}
                      >
-                        <Link className={cx("item")} to={removeAccents(film.filmName)}>
+                        <Link className={cx("item")} to={film.id + '/' + removeAccents(film.filmName) + '/description'}>
                            <img className={cx("image")} src={'http://localhost:8080/' + film.image} alt="avatar" />
                            {/* {animation.children ? <span className={cx("episode")}>{`Tập ${animation.children[animation.children.length - 1].episode}`}</span> : ''} */}
                            <div className={cx("overlay")}></div>

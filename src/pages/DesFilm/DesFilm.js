@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link,useParams } from 'react-router-dom';
 import classNames from "classnames/bind";
 import styles from "./DesFilm.module.scss"
 import { desFilms } from "~/services";
@@ -8,22 +8,15 @@ import { faHardDrive } from "@fortawesome/free-solid-svg-icons";
 const cx = classNames.bind(styles);
 
 function DesFilm() {
-   const location = useLocation();
-   const [data, setData] = useState({});
+   const [film, setFilm] = useState({});
+   const {id} = useParams()
    useEffect(() => {
-      const { pathname } = location;
-      console.log(pathname);
-      desFilms.forEach((film) => {
-         if (film.link === pathname) {
-            const { link, title, image, categories, des, episodes } = film;
-            setData({
-               link, title, image, categories, des, episodes
-            })
-         }
-      })
+      fetch(`http://localhost:8080/api/film/${id}`)
+      .then((response) => response.json())
+      .then((data) =>setFilm(data));
       // eslint-disable-next-line react-hooks/exhaustive-deps
-   }, [location.pathname])
-   // console.log("check data: ", location.pathname);
+   }, [])
+   console.log('check id: ', id);
    return (
       <div className={cx("wrapper")}>
          <div className={cx("container")}>
@@ -34,22 +27,20 @@ function DesFilm() {
 
             <div className={cx("row")}>
                <div className={cx("col-lg-4", "col-md-5", "col-sm-6", "col-6")} style={{ margin: "auto" }}>
-                  <img className={cx("image")} src={data && data.image ? data.image : ""} alt={data && data.title ? data.title : ""} />
+                  <img className={cx("image")} src={film && film.image ? `http://localhost:8080/${film.image}` : ""} alt={film && film.filmName ? film.filmName : ""} />
                </div>
                <div className={cx("col-lg-8", "col-md-7", "col-sm-6", "col-12", "infor")}>
-                  <h3 className={cx("title")}>{data && data.title ? data.title : ""}</h3>
+                  <h3 className={cx("title")}>{film && film.filmName ? film.filmName : ""}</h3>
                   <p className={cx("lastest")}>
                      <span className={cx("title")}>Mới nhất: </span>
-                     <span className={cx("episode")}>Tập {data && data.episodes ? data.episodes[data.episodes.length - 1] : ""}</span>
+                     <span className={cx("episode")}>Tập {film && film.episodes ? film.episodes[film.episodes.length - 1] : ""}</span>
                   </p>
-                  <p className={cx("categories")}>
+                  <p className={cx("category")}>
                      <span className={cx("title")}>Thể loại:</span>
-                     {data && data.categories ?
-                        data.categories.map((category, index) => {
-                           return (
-                              <Link to="/" className={cx("category")} key={index}>{category}</Link>
-                           )
-                        })
+                     {film && film.Category && film.Category.categoryName ?
+
+                              <Link to="/" className={cx("category-content")}>{film.Category.categoryName}</Link>
+
                         :
                         <></>
                      }
@@ -65,8 +56,8 @@ function DesFilm() {
                   </span>
                </div>
                <ul className={cx("row", "le-content")}>
-                  {data && data.episodes ?
-                     data.episodes.map((item, index) => {
+                  {film && film.episodes ?
+                     film.episodes.map((item, index) => {
 
                         return (
                            <li key={index} className={cx("episode", "col-3", "col-sm-2", "col-xl-1")}>
@@ -86,7 +77,7 @@ function DesFilm() {
                   <span className={cx("h-text")}>Thông tin phim</span>
                </h4>
                <div className={cx("des-content")}>
-                  {data && data.des}
+                  {film && film.description}
                </div>
             </div>
          </div>

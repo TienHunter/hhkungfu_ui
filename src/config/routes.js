@@ -1,6 +1,6 @@
 const routes = {
    home: '/',
-   desFilm: "/:nameFilm",
+   desFilm: "/:id/:nameFilm/description",
    viewFilm: "/:nameFilm/:episode",
 }
 export default routes;
