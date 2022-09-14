@@ -24,7 +24,15 @@
         animation: flicker 1s ease-in-out infinite alternate;
     }
 }
-
+.active {
+    .btn-nav {
+        background-color:transparent;
+        pointer-events: none;
+        cursor: pointer;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.05);
+    }
+}
 @keyframes flicker {
     0% {
         text-shadow: 0 0 5px #00dcff, 0 0 10px #00dcff, 0 0 15px #00dcff, 0 0 30px #00dcff;

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation, Link,useParams } from 'react-router-dom';
+import { Link,useParams } from 'react-router-dom';
 import classNames from "classnames/bind";
 import styles from "./DesFilm.module.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
