@@ -1,0 +1,18 @@
+.paginate {
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    list-style: none;
+    font-size: 1.6rem;
+    font-weight: 600;
+    .paginate-page {
+        margin: 0 6px;
+        padding: 6px;
+        background-color: #1cb5e0;
+        
+        .paginate-page-link {
+            color: #feffff;
+
+        }
+    }
+}
