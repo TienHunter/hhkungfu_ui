@@ -1,18 +1,40 @@
-.paginate {
+.page-numbers {
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 6px;
     list-style: none;
     font-size: 1.6rem;
     font-weight: 600;
-    .paginate-page {
+    li {
         margin: 0 6px;
-        padding: 6px;
-        background-color: #1cb5e0;
-        
-        .paginate-page-link {
+        .page-number {
+            background: #2e2e38;
+            transition: 0.5s all;
             color: #feffff;
-
+            text-shadow: 0 1px 0 rgb(0 0 0 / 50%);
+            padding: 8px 13px;
+            border-radius: 2px;
+            &:hover {
+                background: #396792;
+                color: #fff;
+                transition: .5s all;
+            }
+            &.page-current {
+                background: #5c5c70;
+                transition: 0.5s all;
+                color: #fff;
+                &:hover {
+                    background: #cd881e;
+                    transition: .5s all;
+                    cursor: not-allowed;
+                }
+            }
+            &.disable-click {
+                pointer-events: none;
+                cursor: none;
+                opacity: 0.6;
+            }
         }
     }
 }

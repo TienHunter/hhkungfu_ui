@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './FilmsByCategory.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { removeAccents } from '../../utils/common';
 import Paginate from '~/layouts/components/Paginate/Paginate';
 import * as filmService from '~/apiService/filmService';

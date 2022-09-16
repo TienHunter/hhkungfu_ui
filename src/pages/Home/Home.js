@@ -22,7 +22,6 @@ function HomePage() {
     const handleCurrentItem = (data) => {
         setCurrentItems(data);
     };
-    console.log('currentItems: ', currentItems);
     return (
         <Paginate res={films} parentCallback={handleCurrentItem}>
             <div className={cx('wrapper')}>
