@@ -1,28 +1,25 @@
 import { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
-import styles from './FilmsByCategory.module.scss';
-import { removeAccents } from '../../utils/common';
-import Paginate from '~/layouts/components/Paginate/Paginate';
+import styles from './HomeFilms.module.scss';
+import { removeAccents } from '~/utils/common';
 import * as filmService from '~/apiService/filmService';
+import Paginate from '~/layouts/components/Paginate/Paginate';
 import Films from '~/layouts/components/Films';
 const cx = classNames.bind(styles);
 
-function FilmsByCategoryPage() {
+function HomeFilms() {
     const [films, setFilms] = useState([]);
     const [currentItems, setCurrentItems] = useState([]);
-    const [category, setCategory] = useState({});
-    const { categoryID } = useParams();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         const fetchApi = async () => {
-            const res = await filmService.getFilmsByCategory(categoryID);
-            const resCategory = await filmService.getCategoryByCategoryID(categoryID);
-            setCategory(resCategory);
-            setFilms(res);
+            const res = await filmService.getFilms();
+            const result = [...res];
+            setFilms(result);
         };
         fetchApi();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [categoryID]);
+    }, []);
     const handleCurrentItem = (data) => {
         setCurrentItems(data);
     };
@@ -34,7 +31,7 @@ function FilmsByCategoryPage() {
                         <div className={cx('col-12')}>
                             <h4 className={cx('heading')}>
                                 <div className="link-to-page">
-                                    <span className={cx('h-text')}>{category.categoryName}</span>
+                                    <span className={cx('h-text')}>Mới nhất</span>
                                 </div>
                             </h4>
                         </div>
@@ -46,4 +43,4 @@ function FilmsByCategoryPage() {
     );
 }
 
-export default FilmsByCategoryPage;
+export default HomeFilms;
