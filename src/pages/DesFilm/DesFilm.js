@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useLocation } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './DesFilm.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -17,7 +17,7 @@ function DesFilm() {
         };
         fetchApi(id);
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [id]);
     return (
         <div className={cx('wrapper')}>
             <div className={cx('container')}>
