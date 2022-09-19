@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import styles from './Paginate.module.scss';
 
 const cx = classNames.bind(styles);
-const itemsPerPage = 2;
+const itemsPerPage = 12;
 function Paginage({ children, res = [], parentCallback }) {
     // We start with an empty list of items.
     const [currentItems, setCurrentItems] = useState([]);

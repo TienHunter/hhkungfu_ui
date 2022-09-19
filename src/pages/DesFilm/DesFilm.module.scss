@@ -1,9 +1,10 @@
 .wrapper {
-    background-color: #1a1a20;
+    // background-color: #1a1a20;
     // border-top-left-radius: 12px;
     // border-top-right-radius: 12px;
     border-radius: 12px;
     overflow: hidden;
+    padding: 12px 0;
 }
 .heading {
     position: relative;
@@ -131,6 +132,9 @@
             width: 100%;
             padding: 8px 2px;
             opacity: 1;
+            &.active {
+                background: linear-gradient(140deg,rgba(27,27,27,.25) 0%,rgba(128,49,0,.25) 50%,rgba(179,68,0,.25) 75%,rgba(255,98,0,.25) 100%);
+            }
             &:hover {
                 background: linear-gradient(135deg, #23232a 5%, #772c09 95%);
                 opacity: 0.8;
