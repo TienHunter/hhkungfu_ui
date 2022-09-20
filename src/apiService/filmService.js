@@ -64,6 +64,14 @@ const getFilmsMoreViews = async () => {
         console.log(error);
     }
 };
+const getFilmsByfilmName = async (keyFilm) => {
+    try {
+        const res = await request.get(`/films/search?keyFilm=${keyFilm}`);
+        return res.data;
+    } catch (error) {
+        console.log(error);
+    }
+};
 export {
     getFilm,
     getFilms,
@@ -73,4 +81,5 @@ export {
     getshowtimes,
     getFilmsByTimeID,
     getFilmsMoreViews,
+    getFilmsByfilmName,
 };

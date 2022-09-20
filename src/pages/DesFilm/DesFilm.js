@@ -18,6 +18,7 @@ function DesFilm() {
             const res = await filmService.getFilm(id);
             setFilm(res.film);
             setEpisodes(res.episodes);
+            setEpisodeView({});
         };
         fetchApi(id);
         // eslint-disable-next-line react-hooks/exhaustive-deps

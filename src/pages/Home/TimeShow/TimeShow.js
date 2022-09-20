@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './TimeShow.module.scss';
 import * as filmService from '~/apiService/filmService';
-import { removeAccents } from '~/utils/common';
 import Films from '~/layouts/components/Films';
 import Paginate from '~/layouts/components/Paginate';
+import Tilte from '~/components/Title';
 const cx = classNames.bind(styles);
 function TimeShow() {
     const [times, setTimes] = useState([]);
@@ -34,11 +33,7 @@ function TimeShow() {
         <div className={cx('wrapper')}>
             <div className={cx('row')}>
                 <div className={cx('col-12')}>
-                    <h4 className={cx('heading')}>
-                        <div className="link-to-page">
-                            <span className={cx('h-text')}>Lịch chiếu</span>
-                        </div>
-                    </h4>
+                    <Tilte title="Lịch chiếu" />
                 </div>
                 <ul className={cx('showtimes')}>
                     {times.map((item, index) => {

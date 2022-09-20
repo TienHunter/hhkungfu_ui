@@ -25,7 +25,7 @@ function Header() {
                         <FontAwesomeIcon icon={faBookmark} />
                     </span>
                     <span className={cx('title')}>Phim yêu thích</span>
-                    <span className={cx('count')}>1</span>
+                    <span className={cx('count')}>0</span>
                 </div>
             </div>
         </header>

@@ -1,5 +1,8 @@
 .search {
-    max-width: 360px;
+    --search-button-width: 48px;
+    position: relative;
+    // max-width: 360px;
+    min-width: 360px;
     border: 1px solid #273e52;
     background: linear-gradient(
         90deg,
@@ -24,10 +27,31 @@
             opacity: 0.8;
         }
     }
+    .clean,
+    .loading {
+        position: absolute;
+        color: #efefef;
+        font-size: 1.6rem;
+        right: calc(var(--search-button-width) + 12px);
+        top: 50%;
+        transform: translateY(-50%);
+        background: transparent;
+    }
+    .loading {
+        animation: spiner 0.8s linear infinite;
+    }
+    @keyframes spiner {
+        from {
+            transform: translateY(-50%) rotate(0);
+        }
+        to {
+            transform: translateY(-50%) rotate(360deg);
+        }
+    }
     .search-btn {
         position: relative;
         font-size: 1.6rem;
-        padding: 0 16px;
+        width: var(--search-button-width);
         background-color: transparent;
         color: #cccccc12;
         pointer-events: none;
@@ -39,6 +63,39 @@
             top: 0;
             left: 0;
             background-color: #333;
+        }
+    }
+}
+.search-result {
+    background-color: #ccc;
+    border-radius: 6px;
+    // width: 100%;
+    .search-title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #333;
+        height: 30px;
+        padding: 6px 12px;
+    }
+    .search-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 16px;
+        text-decoration: none;
+        &:hover {
+           cursor: pointer;
+           background: rgba(22, 24, 35, 0.03);
+        }
+        .search-item__img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 12px;
+        }
+        .search-item__filmName {
+            flex: 1;
         }
     }
 }

@@ -6,6 +6,7 @@ import { removeAccents } from '../../utils/common';
 import Paginate from '~/layouts/components/Paginate/Paginate';
 import * as filmService from '~/apiService/filmService';
 import Films from '~/layouts/components/Films';
+import Title from '~/components/Title';
 const cx = classNames.bind(styles);
 
 function FilmsByCategoryPage() {
@@ -32,11 +33,7 @@ function FilmsByCategoryPage() {
                 <div className={cx('grid')}>
                     <div className={cx('row')}>
                         <div className={cx('col-12')}>
-                            <h4 className={cx('heading')}>
-                                <div className="link-to-page">
-                                    <span className={cx('h-text')}>{category.categoryName}</span>
-                                </div>
-                            </h4>
+                            <Title title={category.categoryName} />
                         </div>
                         <Films films={currentItems} />
                     </div>
